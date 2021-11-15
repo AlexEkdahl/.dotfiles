@@ -1,0 +1,74 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.suggestSelection": "first",
+  "workbench.startupEditor": "none",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "editor.fontFamily": "'Fira Code', Monaco, 'Courier New', monospace, Meslo",
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "window.restoreWindows": "none",
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "prettier.jsxBracketSameLine": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  "breadcrumbs.enabled": false,
+  "editor.smoothScrolling": true,
+  "editor.hover.delay": 500,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 24,
+  "workbench.colorCustomizations": {
+    "[One Dark Pro]": {
+      "terminal.background": "#212528",
+      "editor.background": "#212528",
+      "tab.activeBackground": "#303538",
+      "panel.background": "#282e33",
+      "sideBar.border": "#303538"
+    }
+  },
+  "path-intellisense.extensionOnImport": true,
+  "template-string-converter.autoRemoveTemplateString": true,
+  "template-string-converter.validLanguages": [
+    "svelte",
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact",
+    "javascriptvue"
+  ],
+  "editor.bracketPairColorization.enabled": true,
+  "editor.minimap.enabled": false,
+  "files.autoSave": "onWindowChange",
+  "editor.wordWrap": "wordWrapColumn",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "cSpell.language": "en,en-GB",
+  "editor.cursorSmoothCaretAnimation": true,
+  "diffEditor.codeLens": true,
+  "terminal.integrated.automationShell.linux": "",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.cursorSurroundingLines": 1,
+  "workbench.colorTheme": "One Dark Pro",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "material-icon-theme.folders.color": "#7cb342",
+  "editor.inlayHints.fontFamily": "'Fira Code'",
+  "editor.linkedEditing": true,
+  "terminal.integrated.fontFamily": "'MesloLGS NF'",
+  "editor.inlineSuggest.enabled": true,
+  "terminal.integrated.enablePersistentSessions": false,
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  }
+}
