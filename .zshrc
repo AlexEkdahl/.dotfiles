@@ -35,6 +35,9 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Alias #
 
+# Brew
+alias brewski="brew update && brew upgrade && brew cleanup"
+
 # Vim
 alias vim="nvim"
 
