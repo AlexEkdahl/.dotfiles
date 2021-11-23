@@ -57,7 +57,6 @@
   "terminal.integrated.automationShell.linux": "",
   "security.workspace.trust.untrustedFiles": "open",
   "editor.cursorSurroundingLines": 1,
-  "workbench.colorTheme": "One Dark Pro",
   "diffEditor.ignoreTrimWhitespace": false,
   "material-icon-theme.folders.color": "#7cb342",
   "editor.inlayHints.fontFamily": "'Fira Code'",
@@ -71,5 +70,6 @@
     "plaintext": false,
     "markdown": false
   },
-  "window.zoomLevel": -1
+  "window.zoomLevel": -1,
+  "workbench.colorTheme": "One Dark Pro"
 }
