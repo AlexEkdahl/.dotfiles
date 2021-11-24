@@ -58,6 +58,7 @@ alias ..='cd ..'
 alias dev='cd ~/dev && echo "$(tput setaf 1)Projects"$(tput sgr0) && ls'
 alias war='cd ~/dev/misc/codewars && code .'
 alias lsa='ls -a'
+alias scs='open ~/Downloads/screenshots'
 
 
 # Databas

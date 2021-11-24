@@ -23,17 +23,14 @@
   "editor.smoothScrolling": true,
   "editor.hover.delay": 500,
   "editor.fontLigatures": true,
-  "editor.lineHeight": 24,
+  "editor.lineHeight": 25,
   "workbench.colorCustomizations": {
     "[One Dark Pro]": {
-      "terminal.background": "#212528",
-      "editor.background": "#212528",
-      "tab.activeBackground": "#303538",
-      "panel.background": "#282e33",
+      "terminal.background": "#21252b",
+      "editor.background": "#21252b",
       "sideBar.border": "#303538"
     }
   },
-  "path-intellisense.extensionOnImport": true,
   "template-string-converter.autoRemoveTemplateString": true,
   "template-string-converter.validLanguages": [
     "svelte",
@@ -51,14 +48,13 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "cSpell.language": "en,en-GB",
   "editor.cursorSmoothCaretAnimation": true,
   "diffEditor.codeLens": true,
   "terminal.integrated.automationShell.linux": "",
   "security.workspace.trust.untrustedFiles": "open",
   "editor.cursorSurroundingLines": 1,
   "diffEditor.ignoreTrimWhitespace": false,
-  "material-icon-theme.folders.color": "#7cb342",
+  "material-icon-theme.folders.color": "#e5e3d9",
   "editor.inlayHints.fontFamily": "'Fira Code'",
   "editor.linkedEditing": true,
   "terminal.integrated.fontFamily": "'MesloLGS NF'",
@@ -70,6 +66,23 @@
     "plaintext": false,
     "markdown": false
   },
+
   "window.zoomLevel": -1,
-  "workbench.colorTheme": "One Dark Pro"
+  "workbench.colorTheme": "One Dark Pro",
+  "zenMode.fullScreen": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.visible": false,
+  "window.titleBarStyle": "custom",
+  "workbench.panel.defaultLocation": "right",
+  "editor.cursorWidth": 1,
+  "workbench.editor.tabCloseButton": "off",
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "search.exclude": {
+    "**/node_modules": true
+  }
 }
