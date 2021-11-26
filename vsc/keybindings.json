@@ -86,11 +86,6 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "shift+cmd+f",
-    "command": "editor.action.formatSelection",
-    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "cmd+k cmd+f",
     "command": "-editor.action.formatSelection",
     "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
@@ -169,5 +164,10 @@
   {
     "key": "cmd+' cmd+'",
     "command": "workbench.action.focusActiveEditorGroup"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.terminal.searchWorkspace",
+    "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
   }
 ]
