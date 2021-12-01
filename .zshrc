@@ -36,10 +36,10 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 # Alias #
 
 # Brew
-alias brewski="brew update && brew upgrade && brew cleanup"
+alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
 
 # Vim
-# alias vim="nvim"
+alias vim="nvim"
 
 # Misc
 alias editconfig='code ~/.zshrc'
