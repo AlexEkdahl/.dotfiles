@@ -65,8 +65,6 @@
     "plaintext": false,
     "markdown": false
   },
-
-  "window.zoomLevel": -1,
   "workbench.colorTheme": "One Dark Pro",
   "zenMode.fullScreen": false,
   "editor.scrollbar.horizontal": "hidden",
@@ -83,5 +81,6 @@
   "search.exclude": {
     "**/node_modules": true
   },
-  "workbench.statusBar.visible": false
+  "workbench.statusBar.visible": false,
+  "window.zoomLevel": -1
 }

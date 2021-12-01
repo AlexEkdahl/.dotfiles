@@ -161,13 +161,19 @@
     "key": "ctrl+cmd+up",
     "command": "workbench.action.splitEditorToAboveGroup"
   },
+  { "key": "cmd+' cmd+'", "command": "workbench.action.terminal.focus" },
   {
     "key": "cmd+' cmd+'",
-    "command": "workbench.action.focusActiveEditorGroup"
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
   },
   {
     "key": "shift+cmd+f",
     "command": "-workbench.action.terminal.searchWorkspace",
     "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
+  },
+  {
+    "key": "alt+cmd+[BracketLeft]",
+    "command": "workbench.action.closeEditorInAllGroups"
   }
 ]

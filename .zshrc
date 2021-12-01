@@ -47,6 +47,7 @@ alias reload='source ~/.zshrc'
 alias reg='cd ~/dev/misc/webscrape && node app.js && cd -'
 alias wttr='curl -s wttr.in/'
 alias ports='lsof -i TCP'
+alias spdt='speedtest -s 31538'
 
 # Node
 alias check='npx depcheck'
