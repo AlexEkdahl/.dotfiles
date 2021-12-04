@@ -1,0 +1,8 @@
+{
+  "Alt-/": "lua:comment.comment",
+  "CtrlUnderscore": "lua:comment.comment",
+  "Ctrl-j": "CommandMode",
+  "Ctrl-e": "command:tree",
+  "ShiftRight": "VSplit",
+  "ShiftLeft": "Unsplit"
+}
