@@ -42,7 +42,7 @@ alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
 alias vim="nvim"
 
 # Misc
-alias editconfig='code ~/.zshrc'
+alias editconfig='micro ~/.zshrc'
 alias reload='source ~/.zshrc'
 alias reg='cd ~/dev/misc/webscrape && node app.js && cd -'
 alias wttr='curl -s wttr.in/'
