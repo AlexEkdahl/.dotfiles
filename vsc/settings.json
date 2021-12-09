@@ -82,5 +82,6 @@
     "**/node_modules": true
   },
   "workbench.statusBar.visible": false,
+  "terminal.integrated.tabs.enabled": false,
   "window.zoomLevel": -1
 }
