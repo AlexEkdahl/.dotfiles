@@ -1,7 +1,7 @@
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 if [ -x "$(command -v exa)" ]; then
     alias ls="exa --icons --grid --colour=never"
@@ -22,7 +22,7 @@ COMPLETION_WAITING_DOTS="true"
 # ENV
 # export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/opt/homebrew/bin:/opt/homebrew/sbin
 export PATH="/opt/homebrew/bin:$PATH"
-export ZSH="/Users/alexanderekdahl/.oh-my-zsh"
+export ZSH="/Users/alex/.oh-my-zsh"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -60,7 +60,7 @@ alias dev='cd ~/dev && echo "$(tput setaf 1)Projects"$(tput sgr0) && ls'
 alias war='cd ~/dev/misc/codewars && code .'
 alias lsa='ls -a'
 alias scs='open ~/Downloads/screenshots'
-
+alias movie='cd ~/dev/new_projects/MovieSwipe && code .'
 
 # Databas
 alias startDB='brew services start mongodb-community && brew services start mysql && brew services start redis && brew services start neo4j'
@@ -75,6 +75,7 @@ alias sprkslog='heroku logs --app sprks-backend --tail --source app'
 alias sprksgamelog='heroku logs --app sprks-game --tail --source app'
 alias ssneo4j='cypher-shell -a neo4j+s://424fd9e7.databases.neo4j.io -u neo4j -p FJ4z9XZkJlIROH1hwaWxd_Xki7XNMf85Aj-ACJdJPlM --format verbose'
 alias ss='cd ~/dev/stjarnstoft && echo $(tput setaf 1)Stjärnstoft Studios project$(tput sgr0) && ls'
+
 
 # Functions
 project(){ cd ~/dev/new_projects; mkdir "$1"; cd "$1"; code .; }

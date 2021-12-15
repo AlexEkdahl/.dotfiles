@@ -149,6 +149,17 @@
     "command": "workbench.files.action.focusFilesExplorer"
   },
   {
+    "key": "cmd+e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletVisible"
+  },
+  {
+    "key": "cmd+e",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletVisible"
+  },
+
+  {
     "key": "ctrl+cmd+down",
     "command": "-workbench.action.terminal.resizePaneDown",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
@@ -175,5 +186,9 @@
   {
     "key": "alt+cmd+[BracketLeft]",
     "command": "workbench.action.closeEditorInAllGroups"
+  },
+  {
+    "key": "cmd+y",
+    "command": "workbench.files.action.collapseExplorerFolders"
   }
 ]
