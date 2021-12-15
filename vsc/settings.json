@@ -4,7 +4,7 @@
   "workbench.startupEditor": "none",
   "editor.fontSize": 16,
   "terminal.integrated.fontSize": 16,
-  "editor.fontFamily": "'Fira Code', Monaco, 'Courier New', monospace, Meslo",
+  "editor.fontFamily": "'FiraCode Nerd Font Mono', Monaco, 'Courier New', monospace, Meslo",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
@@ -56,7 +56,7 @@
   "material-icon-theme.folders.color": "#e5e3d9",
   "editor.inlayHints.fontFamily": "'Fira Code'",
   "editor.linkedEditing": true,
-  "terminal.integrated.fontFamily": "'MesloLGS NF'",
+  "terminal.integrated.fontFamily": "'MesloLGM Nerd FOnt'",
   "editor.inlineSuggest.enabled": true,
   "terminal.integrated.enablePersistentSessions": false,
   "github.copilot.enable": {
