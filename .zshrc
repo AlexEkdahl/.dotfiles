@@ -24,7 +24,8 @@ COMPLETION_WAITING_DOTS="true"
 export PATH="/opt/homebrew/bin:$PATH"
 export ZSH="/Users/alex/.oh-my-zsh"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
@@ -41,13 +42,18 @@ alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
 # Vim
 alias vim="nvim"
 
+# Intellij
+alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
+
 # Misc
-alias editconfig='micro ~/.zshrc'
+alias editconfig='code ~/.zshrc'
 alias reload='source ~/.zshrc'
 alias reg='cd ~/dev/misc/webscrape && node app.js && cd -'
-alias wttr='curl -s wttr.in/'
+alias wttr='curl -s wttr.in/Lund'
 alias ports='lsof -i TCP'
 alias spdt='speedtest -s 31538'
+alias mip='echo "Private IP address: "; ipconfig getifaddr en0 && echo "Public IP address: "; dig +short myip.opendns.com @resolver1.opendns.com'
+
 
 # Node
 alias check='npx depcheck'
@@ -59,7 +65,7 @@ alias ..='cd ..'
 alias dev='cd ~/dev && echo "$(tput setaf 1)Projects"$(tput sgr0) && ls'
 alias war='cd ~/dev/misc/codewars && code .'
 alias lsa='ls -a'
-alias scs='open ~/Downloads/screenshots'
+alias scs='open ~/Pictures/screenshots'
 alias movie='cd ~/dev/new_projects/MovieSwipe && code .'
 
 # Databas
@@ -69,6 +75,9 @@ alias stopDB='brew services stop mongodb-community && brew services stop mysql &
 # Docker
 alias dils='docker image ls'
 alias dps='docker ps'
+alias dprune='docker volume prune --force'
+dbash(){ docker exec -it $1 bash;}
+alias dkill='docker rmi $(docker images -a -q)'
 
 # Stjarnstoft Studios
 alias sprkslog='heroku logs --app sprks-backend --tail --source app'
@@ -79,7 +88,10 @@ alias ss='cd ~/dev/stjarnstoft && echo $(tput setaf 1)Stjärnstoft Studios proje
 
 # Functions
 project(){ cd ~/dev/new_projects; mkdir "$1"; cd "$1"; code .; }
-clone(){ cd ~/dev/cloned && git clone https://github.com/"$1" && cd "$(basename "$1" .git)" && code . && cd -}
+clone(){ cd ~/dev/cloned && git clone https://github.com/"$1" && cd "$(basename "$1" .git)" && code .}
+
+
+
 
 
 
