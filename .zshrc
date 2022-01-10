@@ -37,6 +37,9 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # Alias #
 
+#Git
+alias gco='git checkout'
+
 # Brew
 alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
 
