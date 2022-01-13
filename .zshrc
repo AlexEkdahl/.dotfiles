@@ -20,6 +20,7 @@ DISABLE_LS_COLORS="true"
 COMPLETION_WAITING_DOTS="true"
 
 # ENV
+export python='/opt/homebrew/bin/python3'
 export node="/opt/homebrew/bin/node"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -46,6 +47,10 @@ alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
 # Vim
 alias vim="nvim"
 
+# Python
+# in root dir #
+alias activate='source env/bin/activate'
+
 # Intellij
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 
@@ -54,7 +59,7 @@ alias editconfig='micro ~/.zshrc'
 alias reload='source ~/.zshrc'
 # alias reg='cd ~/dev/misc/webscrape && node app.js && cd -'
 alias wttr='curl -s wttr.in/Lund'
-alias ports='lsof -i TCP'
+alias ports='netstat -tulanp'
 alias spdt='speedtest -s 31538'
 alias mip='echo "Private IP address: "; ipconfig getifaddr en0 && echo "Public IP address: "; dig +short myip.opendns.com @resolver1.opendns.com'
 
@@ -63,9 +68,12 @@ alias mip='echo "Private IP address: "; ipconfig getifaddr en0 && echo "Public I
 alias check='npx depcheck'
 alias yolo='rm -rf node_modules/ && rm package-lock.json && npm install'
 alias uninstall='npm uninstall'
+alias npd='npm run dev'
 
 # Dir
 alias ..='cd ..'
+alias mv='mv -iv'
+alias cp='cp -iv'
 alias dev='cd ~/dev && echo "$(tput setaf 1)Projects"$(tput sgr0) && ls'
 alias war='cd ~/dev/misc/codewars && code .'
 alias lsa='ls -a'
@@ -92,7 +100,7 @@ alias ss='cd ~/dev/stjarnstoft && echo $(tput setaf 1)Stjärnstoft Studios proje
 
 
 # Functions
-project(){ cd ~/dev/new_projects; mkdir "$1"; cd "$1"; code .; }
+project(){ cd ~/dev/new_projects; mkdir "$1"; cd "$1"; }
 clone(){ cd ~/dev/cloned && git clone https://github.com/"$1" && cd "$(basename "$1" .git)" && code .}
 
 

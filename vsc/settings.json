@@ -11,6 +11,11 @@
   "editor.formatOnPaste": true,
   "window.restoreWindows": "none",
   "editor.tabSize": 2,
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.python"
+  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
@@ -43,7 +48,7 @@
   ],
   "editor.bracketPairColorization.enabled": true,
   "editor.minimap.enabled": false,
-  "files.autoSave": "onWindowChange",
+  "files.autoSave": "onFocusChange",
   "editor.wordWrap": "wordWrapColumn",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.editorAssociations": {
@@ -51,7 +56,6 @@
   },
   "editor.cursorSmoothCaretAnimation": true,
   "diffEditor.codeLens": true,
-  "terminal.integrated.automationShell.linux": "",
   "security.workspace.trust.untrustedFiles": "open",
   "diffEditor.ignoreTrimWhitespace": false,
   "material-icon-theme.folders.color": "#e5e3d9",
@@ -60,12 +64,6 @@
   "terminal.integrated.fontFamily": "'MesloLGM Nerd FOnt'",
   "editor.inlineSuggest.enabled": true,
   "terminal.integrated.enablePersistentSessions": false,
-  "github.copilot.enable": {
-    "*": false,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": false
-  },
   "workbench.colorTheme": "One Dark Pro",
   "zenMode.fullScreen": false,
   "editor.scrollbar.horizontal": "hidden",
@@ -83,7 +81,6 @@
   },
   "terminal.integrated.tabs.enabled": false,
   "git.confirmSync": false,
-  "workbench.activityBar.visible": false,
-  "workbench.statusBar.visible": false,
-  "window.zoomLevel": 1
+  "window.zoomLevel": -1,
+  "workbench.activityBar.visible": false
 }
