@@ -20,7 +20,6 @@ DISABLE_LS_COLORS="true"
 COMPLETION_WAITING_DOTS="true"
 
 # ENV
-export python='/opt/homebrew/bin/python3'
 export node="/opt/homebrew/bin/node"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -48,6 +47,7 @@ alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
 alias vim="nvim"
 
 # Python
+alias python='/opt/homebrew/bin/python3'
 # in root dir #
 alias activate='source env/bin/activate'
 
@@ -57,7 +57,7 @@ alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 # Misc
 alias editconfig='micro ~/.zshrc'
 alias reload='source ~/.zshrc'
-# alias reg='cd ~/dev/misc/webscrape && node app.js && cd -'
+alias reg='java21v reg -n Alex -m alexanderekdahl@me.com'
 alias wttr='curl -s wttr.in/Lund'
 alias ports='netstat -tulanp'
 alias spdt='speedtest -s 31538'
