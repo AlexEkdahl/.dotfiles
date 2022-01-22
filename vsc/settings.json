@@ -81,6 +81,5 @@
   },
   "terminal.integrated.tabs.enabled": false,
   "git.confirmSync": false,
-  "workbench.activityBar.visible": false,
-  "window.zoomLevel": -1
+  "workbench.activityBar.visible": false
 }
