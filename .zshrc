@@ -20,7 +20,6 @@ DISABLE_LS_COLORS="true"
 COMPLETION_WAITING_DOTS="true"
 
 # ENV
-export node="/opt/homebrew/bin/node"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -29,7 +28,7 @@ export ZSH="/Users/alex/.oh-my-zsh"
 export giraffe='157.230.21.82'
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting nvm)
 
 # Source
 source $ZSH/oh-my-zsh.sh
@@ -42,9 +41,6 @@ alias gco='git checkout'
 
 # Brew
 alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
-
-# Vim
-alias vim="nvim"
 
 # Python
 alias python='/opt/homebrew/bin/python3'
@@ -63,7 +59,6 @@ alias ports='netstat -tulanp'
 alias spdt='speedtest -s 31538'
 alias mip='echo "Private IP address: "; ipconfig getifaddr en0 && echo "Public IP address: "; dig +short myip.opendns.com @resolver1.opendns.com'
 
-
 # Node
 alias check='npx depcheck'
 alias yolo='rm -rf node_modules/ && rm package-lock.json && npm install'
@@ -75,15 +70,9 @@ alias ..='cd ..'
 alias mv='mv -iv'
 alias cp='cp -iv'
 alias dev='cd ~/dev && echo "$(tput setaf 1)Projects"$(tput sgr0) && ls'
-alias war='cd ~/dev/misc/codewars && code .'
+alias war='cd ~/dev/misc/unknown && code .'
 alias lsa='ls -a'
 alias scs='open ~/Pictures/screenshots'
-alias movie='cd ~/dev/new_projects/MovieSwipe && code .'
-alias yty='cd ~/dev/new_projects/youtube-together'
-
-# Databas
-alias startDB='brew services start mongodb-community && brew services start mysql && brew services start redis && brew services start neo4j'
-alias stopDB='brew services stop mongodb-community && brew services stop mysql && brew services stop redis && brew services stop neo4j'
 
 # Docker
 alias dils='docker image ls'
@@ -91,23 +80,8 @@ alias dps='docker ps'
 alias dprune='docker volume prune --force'
 dbash(){ docker exec -it $1 bash;}
 alias dkill='docker rmi $(docker images -a -q)'
-
-# Stjarnstoft Studios
-alias sprkslog='heroku logs --app sprks-backend --tail --source app'
-alias sprksgamelog='heroku logs --app sprks-game --tail --source app'
-alias ssneo4j='cypher-shell -a neo4j+s://424fd9e7.databases.neo4j.io -u neo4j -p FJ4z9XZkJlIROH1hwaWxd_Xki7XNMf85Aj-ACJdJPlM --format verbose'
-alias ss='cd ~/dev/stjarnstoft && echo $(tput setaf 1)Stjärnstoft Studios project$(tput sgr0) && ls'
-
+alias dstop='docker stop $(docker ps -a -q)'
 
 # Functions
 project(){ cd ~/dev/new_projects; mkdir "$1"; cd "$1"; }
 clone(){ cd ~/dev/cloned && git clone https://github.com/"$1" && cd "$(basename "$1" .git)" && code .}
-
-
-
-
-
-
-
-
-

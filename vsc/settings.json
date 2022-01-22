@@ -1,30 +1,17 @@
 {
-  "auto-close-tag.disableOnLanguage": ["typescript"],
   "workbench.iconTheme": "material-icon-theme",
   "editor.suggestSelection": "first",
   "workbench.startupEditor": "none",
   "editor.fontSize": 16,
   "terminal.integrated.fontSize": 16,
   "editor.fontFamily": "'FiraCode Nerd Font Mono', Monaco, 'Courier New', monospace, Meslo",
-  "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
   "window.restoreWindows": "none",
   "editor.tabSize": 2,
-  "[python]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "ms-python.python"
-  },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "prettier.jsxBracketSameLine": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.singleQuote": true,
-
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.semi": false,
   "breadcrumbs.enabled": false,
   "editor.smoothScrolling": true,
   "editor.hover.delay": 500,
@@ -48,8 +35,8 @@
   ],
   "editor.bracketPairColorization.enabled": true,
   "editor.minimap.enabled": false,
-  "files.autoSave": "onFocusChange",
-  "editor.wordWrap": "wordWrapColumn",
+  "files.autoSave": "onWindowChange",
+  "editor.wordWrap": "on",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
@@ -66,8 +53,6 @@
   "terminal.integrated.enablePersistentSessions": false,
   "workbench.colorTheme": "One Dark Pro",
   "zenMode.fullScreen": false,
-  "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.vertical": "hidden",
   "editor.overviewRulerBorder": false,
   "editor.hideCursorInOverviewRuler": true,
   "window.titleBarStyle": "custom",
@@ -81,6 +66,30 @@
   },
   "terminal.integrated.tabs.enabled": false,
   "git.confirmSync": false,
+  "editor.scrollbar.horizontal": "hidden",
   "workbench.activityBar.visible": false,
-  "window.zoomLevel": -1
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "prettier.singleQuote": true,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "json",
+    "JSON"
+  ],
+  "javascript.preferences.quoteStyle": "single",
+  "eslint.run": "onSave",
+  "eslint.alwaysShowStatus": true,
+  "eslint.lintTask.enable": true,
+  "eslint.format.enable": true
 }
