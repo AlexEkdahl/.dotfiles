@@ -30,9 +30,9 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 
-# Alias #
+# _- Alias -_ #
 
-# History
+# -History-
 alias h="history -10"
 alias hg="history | grep"
 
@@ -41,7 +41,6 @@ alias gco='git checkout'
 alias gst='git status -s -b'
 alias gstime='git status -s | while read mode file; do echo $mode $(stat -f "%Sm" $file) $file; done|sort'
 alias ggp='git push origin $(current_branch)'
-alias glog="git log --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an> -%C(yellow)%d%Creset %s  %Creset' --abbrev-commit"
 alias gsl="git stash list --pretty=format:'%Cblue%gd%Cred: %C(yellow)%s"
 alias greset='git reset --hard HEAD'
 alias uncommit='git reset --soft HEAD~'
@@ -53,18 +52,7 @@ alias gcob='git branch | cut -c 3- | fzf --print0 -m -1 --border=rounded --heigh
 alias gdb='git branch | cut -c 3- | fzf --print0 -m -1 --border=rounded --height 10% | xargs  -0 -t -o git branch -D'
 alias gun='git --no-pager diff --name-only --cached | fzf --print0 -m -1 --border=rounded --height 10% | xargs -0 -t -o git reset'
 alias gad='git ls-files -m -o --exclude-standard | fzf --print0 -m -1 --border=rounded --height 10% | xargs -0 -t -o git add'
-
-# Interactive git diff
-function gdiff {
-  preview="git diff $@ --color=always -- {-1}"
-  git diff $@ --name-only | fzf -m --ansi --preview $preview
-}
-
-# Interactive git add
-function gadd {
-  preview="git diff $@ --color=always -- {-1}"
-  git ls-files -m -o --exclude-standard | fzf --print0 -m -1 --border=rounded --reverse --ansi --preview $preview --bind=ctrl-j:preview-down --bind=ctrl-k:preview-up | xargs -0 -t -o git add
-}
+alias remotebranch="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
 
 # -Misc-
 alias brewski="brew doctor && brew update && brew upgrade && brew cleanup"
@@ -108,6 +96,57 @@ alias dkill='docker rmi $(docker images -a -q)'
 alias hkc='docker pull gitlab.hkcsecurity.net:5000/phoenix-software/server/docker/yale/phoenix-hub-app-docker-yale:latest'
 alias Docker='open -a Docker'
 
+# Association
+alias -s md=code
+alias -s json=code
+alias -s txt=code
+
+# _- Functions -_ #
+
+# -Git-
+
+# Interactive git diff
+function gdiff {
+  preview="git diff $@ --color=always -- {-1}"
+  git diff $@ --name-only | fzf -m --ansi --preview $preview
+}
+
+# Interactive git add
+function gadd {
+  preview="git diff $@ --color=always -- {-1}"
+  git ls-files -m -o --exclude-standard | fzf --print0 -m -1 --border=rounded --reverse --ansi --preview $preview --bind=ctrl-ö:preview-down --bind=ctrl-k:preview-up | xargs -0 -t -o git add
+}
+
+# git commit browser 
+function glog {
+  git log --color=always \
+      --pretty=format:"%Cred%h%Creset %Cgreen(%cr) %C(bold blue)<%an> -%C(yellow)%d%Creset %s  %Creset" "$@" \
+      --abbrev-commit |
+  fzf --ansi --reverse --preview "git show --color=always --name-only {1}" \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+# grab current branch head
+current_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
+
+# -Docker-
+
+# start containers for phoenix
+dstart(){
+	docker run --name some-mongo -p 27017:27017 --rm -d mongo:4.0.26&&
+	docker run --name some-redis -p 6379:6379 --rm -d redis:6.2.5&&
+	docker run --name some-rabbit -p 5672:5672 --rm -d rabbitmq:3.6-management-alpine&&
+	docker run --name august-aws-dynamodb-local -p 8000:8000 --rm -d amazon/dynamodb-local&&
+	docker ps --format ‘{{.Names}}’;
+}
+
 # Select a running docker container to stop
 ds() {
   local cid
@@ -124,21 +163,7 @@ dbash() {
   [ -n "$cid" ] && docker exec -it "$cid" env TERM=xterm-256color bash
 }
 
-# Association
-alias -s md=code
-alias -s json=code
-alias -s txt=code
-
-# Functions #
-
-# start containers for phoenix
-dstart(){
-	docker run --name some-mongo -p 27017:27017 --rm -d mongo:4.0.26&&
-	docker run --name some-redis -p 6379:6379 --rm -d redis:6.2.5&&
-	docker run --name some-rabbit -p 5672:5672 --rm -d rabbitmq:3.6-management-alpine&&
-	docker run --name august-aws-dynamodb-local -p 8000:8000 --rm -d amazon/dynamodb-local&&
-	docker ps --format ‘{{.Names}}’;
-}
+# -Misc-
 
 # start up time for shell
 timezsh() {
@@ -146,11 +171,26 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-# grab current branch head
-current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
+# fkill - kill processes - list only the ones you can kill.
+fkill() {
+  local pid 
+  if [ "$UID" != "0" ]; then
+      pid=$(ps -f -u $UID | sed 1d | fzf --print0 -m -1 --border=rounded | awk '{print $2}')
+  else
+      pid=$(ps -ef | sed 1d | fzf --print0 -m -1 --border=rounded | awk '{print $2}')
+  fi  
+  if [ "x$pid" != "x" ]
+  then
+      echo $pid | xargs kill -${1:-9}
+  fi  
 }
+
+# run npm script 
+nps() {
+  local script
+  script=$(cat package.json | jq -r '.scripts | keys[] ' | sort | fzf --print0 -m -1 --border=rounded --height 10%) && npm run $(echo "$script")
+}
+
 
 # nvm autouse
 nvm_autouse() {
